@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CollapsibleToolbar.Controls.CollapsiblePage"
+    xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:helpers="clr-namespace:CollapsibleToolbar.Helpers"
+    NavigationPage.HasNavigationBar="False"
+    iOS:Page.UseSafeArea="True"
+>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="StackLayout">
+                <Setter Property="Spacing" Value="0"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid
+            x:Name="gridLayout"
+            Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <helpers:MyScrollView
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                x:Name="scrollView"
+            >
+                <StackLayout>
+                    <StackLayout
+                        x:Name="headerLayout">
+                        <Label
+                            x:Name="lblBigTitle"
+                            TextColor="Black"
+                            Margin="0, 75"
+                            FontSize="40"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                        />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="contentLayout"
+                        Padding="20"
+                        Spacing="10"/>
+                    <StackLayout
+                        x:Name="footerFiller"
+                    />
+                </StackLayout>
+            </helpers:MyScrollView>
+            <StackLayout
+                x:Name="fixedLayout"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

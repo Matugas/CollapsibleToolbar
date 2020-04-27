@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<controls:CollapsiblePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CollapsibleToolbar.Controls"
+    x:Class="CollapsibleToolbar.FirstPage"
+    Title="Novo item"
+    BackgroundColor="White"
+>
+    <controls:CollapsiblePage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="Gray"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="Margin" Value="0, 0, 0, 10"/>
+            </Style>
+        </ResourceDictionary>
+    </controls:CollapsiblePage.Resources>
+
+    <controls:CollapsiblePage.NavBarItems>
+        <controls:NavBarItem IconImageSource="content_save" Command="{Binding SaveCommand}"/>
+    </controls:CollapsiblePage.NavBarItems>
+
+    <controls:CollapsiblePage.Body>
+        <StackLayout>
+            <Label Text="Nome"/>
+            <Entry Placeholder="Nome do item" ReturnType="Next"/>
+
+            <Label Text="Email"/>
+            <Entry Placeholder="Seu email" ReturnType="Next"/>
+
+            <Label Text="Descrição"/>
+            <!--<Frame HasShadow="False"
+                   BorderColor="LightGray"
+                   Padding="10">-->
+                <Editor
+                    Placeholder="Descreva em detalhes seu item"
+                    MaxLength="150"
+                    AutoSize="TextChanges"
+                />
+            <!--</Frame>-->
+
+            <Label Text="Categoria"/>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox />
+                <Label Text="Comida" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox />
+                <Label Text="Bebida" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox />
+                <Label Text="Brinquedo" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <Label Text="Data"/>
+            <DatePicker />
+
+            <Label Text="Dono do item"/>
+            <Picker x:Name="picker" />
+
+            <Label Text="Quantidade"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="sliderLabel" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Default" Text="0"/>
+                <Slider
+                    x:Name="slider"
+                    Grid.Column="1"
+                    Minimum="0"
+                    Maximum="100"
+                    MinimumTrackColor="OrangeRed"
+                    MaximumTrackColor="DarkGreen"
+                    ThumbColor="Gray"
+                />
+            </Grid>
+            
+            <Label Text="Anexos"/>
+            <FlexLayout
+                x:Name="attachmentsContainer"
+                JustifyContent="Start"
+                Wrap="Wrap"
+                HorizontalOptions="FillAndExpand"
+                BindableLayout.ItemsSource="{Binding Attachments}"
+
+            >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            x:Name="attach"
+                            Margin="5"
+                            WidthRequest="100"
+                        >
+                            <Image Source="https://cdn.icon-icons.com/icons2/1129/PNG/512/attachment_79877.png"/>
+                            <Label
+                                Text="{Binding .}"
+                                VerticalOptions="End"
+                                FontSize="Small"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                BackgroundColor="#80000000"
+                                Padding="10, 2"
+                            />
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+
+            </FlexLayout>
+            <Button
+                x:Name="btnAddAttachment"
+                Text="Adicionar Anexo"
+                Command="{Binding AddAttachment}"
+                BackgroundColor="#161925"
+                TextColor="White"
+                FontAttributes="Bold"
+            />
+        </StackLayout>
+    </controls:CollapsiblePage.Body>
+</controls:CollapsiblePage>

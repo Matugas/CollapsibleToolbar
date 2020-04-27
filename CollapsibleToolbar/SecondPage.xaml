@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<controls:CollapsiblePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CollapsibleToolbar.Controls"
+    x:Class="CollapsibleToolbar.SecondPage"
+    Title="Meus Itens"
+    BackgroundColor="White"
+    x:Name="MyPage"
+>
+    <!--<controls:CollapsiblePage.Header>
+        <StackLayout Padding="0, 75" >
+            <Label Text="Bem nice" FontSize="40" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+    </controls:CollapsiblePage.Header>-->
+    <!--<controls:CollapsiblePage.NavBar>
+        <controls:NavBar/>
+    </controls:CollapsiblePage.NavBar>-->
+    <controls:CollapsiblePage.NavBarItems>
+        <controls:NavBarItem IconImageSource="magnify" IsSearch="True"/>
+        <controls:NavBarItem IconImageSource="playlist_edit" />
+        <controls:NavBarItem IconImageSource="account_circle" Command="{Binding ThirdPageCommand}"/>
+    </controls:CollapsiblePage.NavBarItems>
+    <controls:CollapsiblePage.Body>
+        <StackLayout
+            x:Name="bodyLayout"
+            BindableLayout.ItemsSource="{Binding FilteredItems}"
+            Spacing="10">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        HasShadow="False"
+                        BorderColor="LightGray"
+                        Padding="0"
+                        CornerRadius="10"
+                    >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.ItemTappedCommand, Source={x:Reference MyPage}}" CommandParameter="{Binding .}"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal">
+                            <Image
+                                Source="{Binding Image}"
+                                HeightRequest="100"
+                                WidthRequest="100"
+                                Aspect="AspectFill"/>
+                            <StackLayout Orientation="Horizontal" Spacing="30" Padding="10">
+                                <StackLayout>
+                                    <Label
+                                    Text="{Binding Title}" FontAttributes="Bold"/>
+                                    <Label
+                                    Text="{Binding Description}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+    </controls:CollapsiblePage.Body>
+</controls:CollapsiblePage>

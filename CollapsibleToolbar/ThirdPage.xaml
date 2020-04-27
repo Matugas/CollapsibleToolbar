@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<controls:CollapsiblePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CollapsibleToolbar.Controls"
+    x:Class="CollapsibleToolbar.ThirdPage"
+    Title="Terceira Página"
+    HasBackButton="False"
+>
+    <controls:CollapsiblePage.Body>
+        <StackLayout>
+            <Label Text="Nome"/>
+            <Entry
+                Placeholder="Seu nome"
+            />
+            
+            <Label Text="Email"/>
+            <Entry
+                Placeholder="Seu email"
+            />
+            
+            <Label Text="Endereço"/>
+            <Entry
+                Placeholder="Seu endereço"
+            />
+            
+            <Label Text="Campo teste"/>
+            <Entry
+                Placeholder="Campo teste"
+            />
+            
+            <Label Text="Campo teste"/>
+            <Entry
+                Placeholder="Campo teste"
+            />
+            
+            <Label Text="Campo teste"/>
+            <Entry
+                Placeholder="Campo teste"
+            />
+            
+            <Label Text="Campo teste"/>
+            <Entry
+                Placeholder="Campo teste"
+            />
+            
+            <Label Text="Campo teste"/>
+            <Entry
+                Placeholder="Campo teste"
+            />
+            
+            <Label Text="Campo teste"/>
+            <Entry
+                Placeholder="Campo teste"
+            />
+            
+            <Label Text="Campo teste"/>
+            <Entry
+                Placeholder="Campo teste"
+            />
+            
+            <Label Text="Campo teste"/>
+            <Entry
+                Placeholder="Campo teste"
+            />
+            
+            <Label Text="Campo teste"/>
+            <Entry
+                Placeholder="Campo teste"
+            />
+            
+            <Label Text="Campo teste"/>
+            <Entry
+                Placeholder="Campo teste"
+            />
+        </StackLayout>
+    </controls:CollapsiblePage.Body>
+</controls:CollapsiblePage>

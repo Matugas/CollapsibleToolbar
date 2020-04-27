@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CollapsibleToolbar.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Forlogic Mobile"
+    iOS:Page.UseSafeArea="True"
+    BackgroundColor="#E5E5E5"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="StackLayout">
+                <Setter Property="Spacing" Value="0" />
+            </Style>
+            <Style x:Key="ToolbarItem" TargetType="Frame">
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="HasShadow" Value="False" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Visual" Value="Material" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#161925" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Label
+                FontAttributes="Bold"
+                FontSize="40"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                Text="Collapsible Toolbar"
+                TextColor="#303030"
+                VerticalOptions="CenterAndExpand" />
+            <StackLayout
+                Padding="20"
+                Spacing="20"
+                VerticalOptions="CenterAndExpand">
+                <Button
+                    x:Name="btnFirstPage"
+                    BackgroundColor="#FFF"
+                    Text="Cadastro de item"
+                    TextColor="#303030" />
+                <Button
+                    x:Name="btnSecondPage"
+                    BackgroundColor="#FFF"
+                    Text="Listagem de itens"
+                    TextColor="#303030" />
+                <Button
+                    x:Name="btnThirdPage"
+                    BackgroundColor="#FFF"
+                    Text="Edição de item"
+                    TextColor="#303030" />
+            </StackLayout>
+            <Label
+                FontSize="Micro"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                Text="v0.0.1 by Matugas - Forlogic"
+                TextColor="#80303030"
+                VerticalOptions="End" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

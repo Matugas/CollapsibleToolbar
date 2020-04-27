@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CollapsibleToolbar.Controls.NavBar">
+    <ContentView.Content>
+        <StackLayout
+            Orientation="Vertical"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="White"
+        >
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="FillAndExpand"
+            >
+                <StackLayout x:Name="backBtn"
+                             Orientation="Horizontal"
+                             Padding="20, 10, 0, 10">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBackPressed"/>
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="chevron_left"/>
+                </StackLayout>
+                <Label
+                    x:Name="lblTitle"
+                    TextColor="Black"
+                    FontSize="Default"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"
+                    Padding="20, 10, 0, 10"
+                />
+                <StackLayout
+                    x:Name="itemsContainer"
+                    Orientation="Horizontal"
+                    HorizontalOptions="EndAndExpand"
+                    Padding="0, 0, 20, 0"/>
+            </StackLayout>
+            <!--<StackLayout
+                x:Name="searchBarContainer"
+                Orientation="Horizontal"
+                Margin="20, 0, 20, 5">
+                <Entry
+                    x:Name="searchBar"
+                    Text="{Binding SearchBarText}"
+                    ReturnType="Search"
+                    Placeholder="Pesquisar por..."
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                />
+                <Button
+                    Text="Search"
+                    BackgroundColor="#161925"
+                    TextColor="White"
+                    HeightRequest="30"
+                />
+            </StackLayout>-->
+            <SearchBar
+                x:Name="searchBar"
+                BackgroundColor="Transparent"
+                Text="{Binding SearchBarText}"
+                SearchCommand="{Binding SearchCommand}"
+                Margin="20, 0, 20, 5"
+            />
+            <BoxView
+                x:Name="separator"
+                HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

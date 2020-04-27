@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CollapsibleToolbar.Controls.NavBarItemView"
+>
+    <ContentView.Content>
+        <Frame
+            Padding="10, 0"
+            HeightRequest="30"
+            WidthRequest="30"
+            CornerRadius="15"
+            HasShadow="False"
+            BackgroundColor="Transparent"
+        >
+            <StackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Image x:Name="img" Source="{Binding Icon}"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer x:Name="searchTapGR" Command="{Binding Command}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
